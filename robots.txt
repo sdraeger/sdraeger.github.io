@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://sdraeger.github.io//sitemap.xml
+Sitemap: https://sdraeger.github.io/sitemap.xml
