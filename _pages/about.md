@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: MS CS Student @ UC Davis.
+subtitle: CS PhD Student @ UC Davis.
 
 profile:
   align: right
@@ -19,7 +19,7 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-I am a 2nd year MS student in Computer Science at UC Davis and a member of
+I am a PhD student in Computer Science at UC Davis and a member of
 the Computational Climate and Oceanography Group, led by Prof. Maike Sonnewald.
 My research interests are machine learning / deep learning and physical oceanography
 as well as statistics.
