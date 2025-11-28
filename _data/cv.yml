@@ -1,0 +1,13 @@
+- title: Education
+  type: time_table
+  contents:
+    - title: M.S. in Computer Science
+      institution: University of California, Davis
+      year: 2025
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Researcher
+      institution: Computational Neurobiology Laboratory, Salk Institute
+      year: 2025 - present

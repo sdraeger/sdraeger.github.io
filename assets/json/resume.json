@@ -1,0 +1,42 @@
+{
+  "basics": {
+    "name": "Simon Dräger",
+    "label": "Researcher",
+    "image": "",
+    "email": "",
+    "url": "https://sdraeger.github.io/",
+    "summary": "Researcher at the Computational Neurobiology Laboratory at the Salk Institute",
+    "location": {
+      "city": "La Jolla",
+      "countryCode": "US",
+      "region": "California"
+    },
+    "profiles": []
+  },
+  "work": [
+    {
+      "name": "Salk Institute",
+      "position": "Researcher",
+      "url": "https://cnl.salk.edu/",
+      "startDate": "2025-04-01",
+      "summary": "Computational Neurobiology Laboratory, led by Prof. Terry Sejnowski"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of California, Davis",
+      "area": "Computer Science",
+      "studyType": "M.S.",
+      "startDate": "2023-01-03",
+      "endDate": "2025-03-21"
+    }
+  ],
+  "awards": [],
+  "certificates": [],
+  "publications": [],
+  "skills": [],
+  "languages": [],
+  "interests": [],
+  "references": [],
+  "projects": []
+}
