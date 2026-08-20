@@ -8,14 +8,14 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found · Simon Dräger</title>
-<meta name="description" content="The page you requested does not exist or has moved.">
+<title>DDALAB · Simon Dräger</title>
+<meta name="description" content="A desktop application for neurophysiological data analysis using Delay Differential Analysis.">
 <meta name="theme-color" content="oklch(1 0 0)" data-theme-color>
-<meta property="og:title" content="Page not found · Simon Dräger">
-<meta property="og:description" content="The page you requested does not exist or has moved.">
+<meta property="og:title" content="DDALAB · Simon Dräger">
+<meta property="og:description" content="A desktop application for neurophysiological data analysis using Delay Differential Analysis.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://sdraeger.github.io/404.html">
-<link rel="canonical" href="https://sdraeger.github.io/404.html">
+<meta property="og:url" content="https://sdraeger.github.io/research/ddalab/">
+<link rel="canonical" href="https://sdraeger.github.io/research/ddalab/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png" sizes="32x32">
@@ -63,14 +63,49 @@
 
         <header class="detail-header">
           
-          <h1>Page not found</h1>
-          <p>The page you requested does not exist or has moved.</p>
+            <p class="detail-label">Research software</p>
           
+          <h1>DDALAB</h1>
+          <p>A desktop application for neurophysiological data analysis using Delay Differential Analysis.</p>
+          
+            <div class="tag-list">
+              <span>Neurophysiology</span><span>Time-series analysis</span>
+            </div>
+          
+          
+            <div class="detail-actions">
+              
+                <a class="button button-outline" href="https://github.com/sdraeger/DDALAB" target="_blank" rel="noreferrer">
+                  GitHub
+                  
+
+<svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg>
+
+
+                </a>
+              
+            </div>
           
         </header>
 
         <hr class="divider">
-        <article class="prose">Return to the [homepage](/) or use the research links there to continue browsing.
+        <article class="prose"><p>DDALAB is a cross-platform desktop application for analyzing neurophysiological data using Delay Differential Analysis (DDA). All data processing happens locally on your machine for maximum privacy. Besides being useful for physiological applications, DDALAB can serve as a general-purpose time-series visualization and annotation tool.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li><strong>Multi-format support:</strong> EDF, FIFF, ASCII/CSV, BrainVision, and EEGLAB files</li>
+  <li><strong>BIDS compatibility:</strong> Native Brain Imaging Data Structure support</li>
+  <li><strong>OpenNeuro integration:</strong> Direct dataset browsing and downloads</li>
+  <li><strong>Real-time analysis:</strong> Interactive heatmaps and time-series visualization</li>
+  <li><strong>Analysis history:</strong> Persistent storage via SQLite</li>
+</ul>
+
+<h2 id="technology">Technology</h2>
+
+<p><strong>Frontend:</strong> Tauri v2, React 18, TypeScript, Next.js 14, and ECharts</p>
+
+<p><strong>Backend:</strong> Rust, Axum, SQLite, and the custom <code class="language-plaintext highlighter-rouge">dda-rs</code> package for DDA</p>
 </article>
         <hr class="divider">
         
