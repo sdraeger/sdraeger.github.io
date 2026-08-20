@@ -1,0 +1,54 @@
+{% assign profile = site.data.profile %}
+{% capture document_title %}{{ page.title }} · {{ profile.name }}{% endcapture %}
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}" data-theme="light">
+  <head>
+    {% include site-head.html title=document_title description=page.summary %}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        <nav class="detail-nav" aria-label="Project navigation">
+          <a href="{{ '/' | relative_url }}">
+            {% include icon.html name="arrow-left" size=14 %}
+            <span>{{ profile.name }}</span>
+          </a>
+          {% include theme-toggle.html %}
+        </nav>
+
+        <header class="detail-header">
+          {% if page.status or page.year %}
+            <p class="detail-label">{% if page.status %}{{ page.status }}{% endif %}{% if page.status and page.year %} · {% endif %}{% if page.year %}{{ page.year }}{% endif %}</p>
+          {% endif %}
+          <h1>{{ page.title }}</h1>
+          {% if page.summary %}<p>{{ page.summary }}</p>{% endif %}
+          {% if page.tags and page.tags.size > 0 %}
+            <div class="tag-list">
+              {% for tag in page.tags %}<span>{{ tag }}</span>{% endfor %}
+            </div>
+          {% endif %}
+          {% if page.links and page.links.size > 0 %}
+            <div class="detail-actions">
+              {% for link in page.links %}
+                <a class="button button-outline" href="{{ link.url }}"{% if link.url contains "://" %} target="_blank" rel="noreferrer"{% endif %}>
+                  {{ link.label }}
+                  {% include icon.html name="external" size=12 %}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </header>
+
+        <hr class="divider">
+        <article class="prose">{{ content }}</article>
+        <hr class="divider">
+        {% include site-footer.html %}
+      </div>
+    </main>
+    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top>
+      {% include icon.html name="arrow-up" size=18 %}
+    </button>
+    <script src="{{ '/assets/js/portfolio.js' | relative_url }}"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}" data-theme="light">
+  <head>
+    {% include site-head.html title=page.title description=site.description %}
+  </head>
+  <body>
+    {% assign profile = site.data.profile %}
+    {% assign projects = site.projects | where: "featured", true | sort: "order" %}
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <main class="site-main" id="main-content">
+      <div class="site-container">
+        <header class="site-header">
+          <div class="intro-copy">
+            <h1>{{ profile.name }}</h1>
+            <p>{{ profile.intro }}</p>
+          </div>
+          <img class="profile-portrait" src="{{ profile.photo | relative_url }}" alt="{{ profile.photo_alt }}" width="400" height="400" fetchpriority="high">
+          <nav class="header-controls" aria-label="Site controls">
+            {% include theme-toggle.html %}
+            <a class="icon-button" href="{{ profile.github_url }}" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub">
+              {% include icon.html name="github" size=16 %}
+            </a>
+          </nav>
+        </header>
+
+        <div class="action-row">
+          <div class="action-group">
+            {% if profile.email and profile.email != empty %}
+              <button class="button button-secondary" type="button" data-copy-email="{{ profile.email }}">
+                <span class="copy-button-icon is-entering" data-copy-icon>
+                  <span data-copy-state="idle">{% include icon.html name="copy" size=14 %}</span>
+                  <span data-copy-state="success" hidden>{% include icon.html name="check" size=14 %}</span>
+                  <span data-copy-state="failure" hidden>{% include icon.html name="x" size=14 %}</span>
+                  <span class="sr-only" data-copy-status>Copy</span>
+                </span>
+                <span>Copy email</span>
+              </button>
+            {% endif %}
+            <a class="button button-secondary" href="#focus">Research Focus</a>
+            {% if projects.size > 0 %}<a class="button button-secondary" href="#research">Research</a>{% endif %}
+          </div>
+          {% if profile.cv_url and profile.cv_url != empty %}
+            <div class="action-group action-group-right">
+              <a class="button button-support" href="{{ profile.cv_url }}" target="_blank" rel="noreferrer">CV</a>
+            </div>
+          {% endif %}
+        </div>
+
+        <hr class="divider">
+
+        <section class="section-stack" id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading">About</h2>
+          {% for paragraph in profile.about %}
+            <p class="section-copy about-copy">{{ paragraph }}</p>
+          {% endfor %}
+        </section>
+
+        <hr class="divider">
+
+        <section class="section-stack" id="focus" aria-labelledby="focus-heading">
+          <h2 id="focus-heading">Research focus</h2>
+          <div class="focus-list">
+            {% for item in profile.focus %}
+              <div class="focus-item">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </section>
+
+        {% if projects.size > 0 %}
+          <hr class="divider">
+          <section class="section-stack" id="research" aria-labelledby="research-heading">
+            <h2 id="research-heading">Selected research</h2>
+            <p class="section-copy">Projects, papers, and research software selected for a concise view of current work.</p>
+            <div class="project-list">
+              {% for project in projects %}
+                {% include project-card.html project=project %}
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% include site-footer.html %}
+      </div>
+    </main>
+    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top>
+      {% include icon.html name="arrow-up" size=18 %}
+    </button>
+    <script src="{{ '/assets/js/portfolio.js' | relative_url }}"></script>
+  </body>
+</html>

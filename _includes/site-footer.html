@@ -1,0 +1,8 @@
+{% assign profile = site.data.profile %}
+<footer class="site-footer">
+  <span>© {{ site.time | date: "%Y" }} {{ profile.name }}</span>
+  <div class="footer-links">
+    {% if profile.email and profile.email != empty %}<a href="mailto:{{ profile.email }}">Email</a>{% endif %}
+    <a href="{{ profile.github_url }}" target="_blank" rel="noreferrer">GitHub</a>
+  </div>
+</footer>

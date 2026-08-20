@@ -1,0 +1,23 @@
+name: Simon Dräger
+intro: Research in machine learning, deep learning, and computational neuroscience.
+photo: /assets/img/profile_pic.jpeg
+photo_alt: Portrait of Simon Dräger
+
+# Add an address to enable the Copy email button.
+email: ""
+github_url: https://github.com/sdraeger
+cv_url: ""
+scholar_url: ""
+
+focus_intro: My research interests include machine learning, deep learning, and computational neuroscience.
+focus:
+  - title: Machine learning
+    description: Methods for learning from complex scientific and neurophysiological data.
+  - title: Deep learning
+    description: Neural-network approaches to representation learning and predictive modeling.
+  - title: Computational neuroscience
+    description: Computational methods for studying neural systems and behavior.
+
+about:
+  - I am a researcher at the Computational Neurobiology Laboratory (CNL) at the Salk Institute, led by Prof. Terry Sejnowski.
+  - I obtained my undergraduate degree in Computer Science from University of Düsseldorf in 2022 and an M.S. in Computer Science from UC Davis in 2025.

@@ -1,0 +1,21 @@
+{% assign project = include.project %}
+<article class="project-entry">
+  <div class="project-copy">
+    <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <p>{{ project.summary }}</p>
+  </div>
+  <div class="project-panel">
+    <p class="project-meta">
+      {% if project.year %}{{ project.year }}{% endif %}{% if project.status %}{% if project.year %} · {% endif %}{{ project.status }}{% endif %}{% if project.tags and project.tags.size > 0 %} · {{ project.tags | join: " · " }}{% endif %}
+    </p>
+    <div class="project-links">
+      <a href="{{ project.url | relative_url }}">Details</a>
+      {% for link in project.links %}
+        <a href="{{ link.url }}"{% if link.url contains "://" %} target="_blank" rel="noreferrer"{% endif %}>
+          {{ link.label }}
+          {% include icon.html name="external" size=12 %}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</article>
