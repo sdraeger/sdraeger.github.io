@@ -1,0 +1,25 @@
+# Keep entries in descending chronological order; the homepage preserves this order.
+- year: 2026
+  title: Task-Restricted Symmetries in Recurrent Weight Space
+  authors: S. Dräger
+  venue: "ICML 2026 Workshop on Weight-Space Symmetries: from Foundations to Practical Applications."
+
+- year: 2026
+  title: "3DifFusionDet: Diffusion Model for 3D Object Detection with Robust LiDAR-Camera Fusion"
+  authors: X. Xiang, S. Dräger, and J. Zhang
+  venue: ICASSP 2026.
+
+- year: 2025
+  title: Causal Dynamic Resonance
+  authors: C. Lainscsek, P. Salami, S. Dräger, S. S. Cash, and T. J. Sejnowski
+  venue: "Accepted to the Proceedings of the National Academy of Sciences. arXiv:2508.16733."
+
+- year: 2025
+  title: "EffiPerception: A Plug-and-Play Efficiency Enhancement Framework for 2D and 3D Perception Models"
+  authors: X. Xiang, S. Dräger, and J. Zhang
+  venue: PRICAI 2025, poster presentation.
+
+- year: 2022
+  title: Evaluating the Impact of Loss Function Variation in Deep Learning for Classification
+  authors: S. Dräger and J. Dunkelau
+  venue: "arXiv:2210.16003."

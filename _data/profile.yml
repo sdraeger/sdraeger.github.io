@@ -3,6 +3,11 @@ intro: Research in machine learning, deep learning, and computational neuroscien
 photo: /assets/img/profile_pic.jpeg
 photo_alt: Portrait of Simon Dräger
 
+email_parts:
+  local: sfdraeger
+  provider: gmail
+  tld: com
+
 # Add an address to enable the Copy email button.
 email: ""
 github_url: https://github.com/sdraeger

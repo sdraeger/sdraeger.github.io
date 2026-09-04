@@ -213,6 +213,21 @@ h3 {
   line-height: 20px;
 }
 
+.profile-email {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.35rem;
+  margin-top: 2px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  font-style: normal;
+  line-height: 16px;
+}
+
+.profile-email-domain {
+  white-space: nowrap;
+}
+
 .intro-copy > p {
   max-width: 36rem;
   margin-top: 12px;
@@ -397,6 +412,35 @@ h3 {
 }
 
 .focus-item p {
+  color: var(--muted-foreground);
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.publication-list {
+  display: grid;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.publication-entry {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 20px;
+}
+
+.publication-entry time {
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.publication-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.publication-copy p {
   color: var(--muted-foreground);
   font-size: 14px;
   line-height: 22px;
@@ -661,6 +705,11 @@ h3 {
   .focus-item {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .publication-entry {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 
   .project-panel,

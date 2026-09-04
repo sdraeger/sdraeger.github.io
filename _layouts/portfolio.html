@@ -6,12 +6,20 @@
   <body>
     {% assign profile = site.data.profile %}
     {% assign projects = site.projects | where: "featured", true | sort: "order" %}
+    {% assign publications = site.data.publications %}
     <a class="skip-link" href="#main-content">Skip to content</a>
     <main class="site-main" id="main-content">
       <div class="site-container">
         <header class="site-header">
           <div class="intro-copy">
             <h1>{{ profile.name }}</h1>
+            {% if profile.email_parts %}
+              <address class="profile-email" aria-label="Email address">
+                <span>{{ profile.email_parts.local }}</span>
+                <span>at</span>
+                <span class="profile-email-domain"><span>{{ profile.email_parts.provider }}</span><span>.</span><span>{{ profile.email_parts.tld }}</span></span>
+              </address>
+            {% endif %}
             <p>{{ profile.intro }}</p>
           </div>
           <img class="profile-portrait" src="{{ profile.photo | relative_url }}" alt="{{ profile.photo_alt }}" width="400" height="400" fetchpriority="high">
@@ -37,6 +45,7 @@
               </button>
             {% endif %}
             <a class="button button-secondary" href="#focus">Research Focus</a>
+            {% if publications.size > 0 %}<a class="button button-secondary" href="#publications">Publications</a>{% endif %}
             {% if projects.size > 0 %}<a class="button button-secondary" href="#research">Research</a>{% endif %}
           </div>
           {% if profile.cv_url and profile.cv_url != empty %}
@@ -69,11 +78,29 @@
           </div>
         </section>
 
+        {% if publications.size > 0 %}
+          <hr class="divider">
+          <section class="section-stack" id="publications" aria-labelledby="publications-heading">
+            <h2 id="publications-heading">Publications</h2>
+            <div class="publication-list">
+              {% for publication in publications %}
+                <article class="publication-entry">
+                  <time datetime="{{ publication.year }}">{{ publication.year }}</time>
+                  <div class="publication-copy">
+                    <h3>{{ publication.title }}</h3>
+                    <p>{{ publication.authors }}. {{ publication.venue }}</p>
+                  </div>
+                </article>
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
         {% if projects.size > 0 %}
           <hr class="divider">
           <section class="section-stack" id="research" aria-labelledby="research-heading">
             <h2 id="research-heading">Selected research</h2>
-            <p class="section-copy">Projects, papers, and research software selected for a concise view of current work.</p>
+            <p class="section-copy">Research software and projects selected for a concise view of current work.</p>
             <div class="project-list">
               {% for project in projects %}
                 {% include project-card.html project=project %}
