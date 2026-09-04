@@ -28,6 +28,11 @@
             <a class="icon-button" href="{{ profile.github_url }}" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub">
               {% include icon.html name="github" size=16 %}
             </a>
+            {% if profile.scholar_url and profile.scholar_url != empty %}
+              <a class="icon-button" href="{{ profile.scholar_url | escape }}" target="_blank" rel="noreferrer" aria-label="Google Scholar profile" title="Google Scholar">
+                {% include icon.html name="scholar" size=16 %}
+              </a>
+            {% endif %}
           </nav>
         </header>
 
