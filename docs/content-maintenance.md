@@ -35,10 +35,12 @@ The `docs/` directory is excluded from the generated website.
 
 ## DDALAB screenshot
 
-`assets/img/ddalab-workspace.png` is an unaltered screenshot of the running
+`assets/img/ddalab-workspace.png` is a screenshot of the running
 Python/PySide6 desktop application, captured on 2026-09-04. At Simon's request,
 it displays `data/S04__05_02_screenprint.edf` from DDALAB: the first ten seconds of
-channels LCIN1–LCIN8, sampled at 500 Hz. The library sidebar is hidden. Only the
+channels LCIN1–LCIN8, sampled at 500 Hz. The library sidebar is hidden. The capture
+tool's cursor and halo were removed using the matching region of a second capture;
+the waveform and control area was verified identical between captures. Only the
 screenshot is included in this repository, not the source EDF. Refresh the screenshot
 and technology description together after significant application changes.
 
