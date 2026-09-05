@@ -11,7 +11,9 @@
       themeToggle.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} mode`);
       themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
     }
-    if (persist) localStorage.setItem("theme", theme);
+    if (persist) {
+      try { localStorage.setItem("theme", theme); } catch (_) { /* Storage may be disabled. */ }
+    }
   }
 
   setTheme(root.dataset.theme === "dark" ? "dark" : "light", false);
@@ -63,7 +65,29 @@
     copyResetTimer = window.setTimeout(() => showCopyState("idle"), 500);
   });
 
-  document.querySelector("[data-scroll-top]")?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  const header = document.querySelector(".site-header");
+  if (header) {
+    const updateHeaderOffset = () => {
+      root.style.setProperty("--header-offset", `${Math.ceil(header.getBoundingClientRect().height) + 16}px`);
+    };
+    updateHeaderOffset();
+    new ResizeObserver(updateHeaderOffset).observe(header);
+    // Re-align an incoming fragment after the web font establishes the header height.
+    document.fonts.ready.then(() => {
+      updateHeaderOffset();
+      const target = document.getElementById(window.location.hash.slice(1));
+      if (target) target.scrollIntoView({ behavior: "instant" });
+    });
+  }
+
+  const scrollTop = document.querySelector("[data-scroll-top]");
+  const updateScrollTop = () => {
+    if (scrollTop) scrollTop.hidden = window.scrollY < 400;
+  };
+  window.addEventListener("scroll", updateScrollTop, { passive: true });
+  updateScrollTop();
+  scrollTop?.addEventListener("click", () => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reducedMotion ? "instant" : "smooth" });
   });
 })();

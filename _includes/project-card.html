@@ -4,7 +4,7 @@
     <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
     <p>{{ project.summary }}</p>
   </div>
-  <div class="project-panel">
+  <div class="project-details">
     <p class="project-meta">
       {% if project.year %}{{ project.year }}{% endif %}{% if project.status %}{% if project.year %} · {% endif %}{{ project.status }}{% endif %}{% if project.tags and project.tags.size > 0 %} · {{ project.tags | join: " · " }}{% endif %}
     </p>

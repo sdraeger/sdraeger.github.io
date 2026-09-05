@@ -20,7 +20,6 @@
                 <span class="profile-email-domain"><span>{{ profile.email_parts.provider }}</span><span>.</span><span>{{ profile.email_parts.tld }}</span></span>
               </address>
             {% endif %}
-            <p>{{ profile.intro }}</p>
           </div>
           <img class="profile-portrait" src="{{ profile.photo | relative_url }}" alt="{{ profile.photo_alt }}" width="400" height="400" fetchpriority="high">
           <nav class="header-controls" aria-label="Site controls">
@@ -35,6 +34,7 @@
             {% endif %}
           </nav>
         </header>
+        <p class="profile-intro">{{ profile.intro }}</p>
 
         <div class="action-row">
           <div class="action-group">
@@ -51,13 +51,11 @@
             {% endif %}
             <a class="button button-secondary" href="#focus">Research Focus</a>
             {% if publications.size > 0 %}<a class="button button-secondary" href="#publications">Publications</a>{% endif %}
-            {% if projects.size > 0 %}<a class="button button-secondary" href="#research">Research</a>{% endif %}
+            {% if projects.size > 0 %}<a class="button button-secondary" href="#research">Research Software</a>{% endif %}
+            {% if profile.cv_url and profile.cv_url != empty %}
+              <a class="button button-secondary button-cv" href="{{ profile.cv_url | relative_url }}" download>CV (PDF)</a>
+            {% endif %}
           </div>
-          {% if profile.cv_url and profile.cv_url != empty %}
-            <div class="action-group action-group-right">
-              <a class="button button-support" href="{{ profile.cv_url }}" target="_blank" rel="noreferrer">CV</a>
-            </div>
-          {% endif %}
         </div>
 
         <hr class="divider">
@@ -72,7 +70,7 @@
         <hr class="divider">
 
         <section class="section-stack" id="focus" aria-labelledby="focus-heading">
-          <h2 id="focus-heading">Research focus</h2>
+          <h2 id="focus-heading">Research Focus</h2>
           <div class="focus-list">
             {% for item in profile.focus %}
               <div class="focus-item">
@@ -92,8 +90,13 @@
                 <article class="publication-entry">
                   <time datetime="{{ publication.year }}">{{ publication.year }}</time>
                   <div class="publication-copy">
-                    <h3>{{ publication.title }}</h3>
-                    <p>{{ publication.authors }}. {{ publication.venue }}</p>
+                    <h3><a href="{{ publication.url | escape }}" target="_blank" rel="noreferrer">{{ publication.title }}</a></h3>
+                    <p>{{ publication.authors }}.</p>
+                    <p>{% if publication.status %}{{ publication.status }} · {% endif %}{{ publication.venue }}{% if publication.preprint_year %} · Preprint {{ publication.preprint_year }}{% endif %}</p>
+                    <div class="publication-links">
+                      {% if publication.pdf_url %}<a href="{{ publication.pdf_url | escape }}" target="_blank" rel="noreferrer" aria-label="{{ publication.pdf_label | default: 'PDF' }}: {{ publication.title | escape }}">{{ publication.pdf_label | default: 'PDF' }}</a>{% endif %}
+                      {% if publication.code_url %}<a href="{{ publication.code_url | escape }}" target="_blank" rel="noreferrer" aria-label="Code: {{ publication.title | escape }}">Code</a>{% endif %}
+                    </div>
                   </div>
                 </article>
               {% endfor %}
@@ -104,8 +107,7 @@
         {% if projects.size > 0 %}
           <hr class="divider">
           <section class="section-stack" id="research" aria-labelledby="research-heading">
-            <h2 id="research-heading">Selected research</h2>
-            <p class="section-copy">Research software and projects selected for a concise view of current work.</p>
+            <h2 id="research-heading">Research Software</h2>
             <div class="project-list">
               {% for project in projects %}
                 {% include project-card.html project=project %}
@@ -117,7 +119,7 @@
         {% include site-footer.html %}
       </div>
     </main>
-    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top>
+    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top hidden>
       {% include icon.html name="arrow-up" size=18 %}
     </button>
     <script src="{{ '/assets/js/portfolio.js' | relative_url }}"></script>

@@ -1,6 +1,9 @@
 ---
 title: DDALAB
 summary: A desktop application for neurophysiological data analysis using Delay Differential Analysis.
+screenshot: /assets/img/ddalab-workspace.png
+screenshot_alt: DDALAB waveform workspace showing eight channels from the screenprint EDF recording and channel-selection controls.
+screenshot_caption: The Qt desktop interface displaying the screenprint EDF example, with channel selection and a ten-second waveform view.
 order: 10
 featured: true
 status: Research software
@@ -12,18 +15,18 @@ links:
     url: https://github.com/sdraeger/DDALAB
 ---
 
-DDALAB is a cross-platform desktop application for analyzing neurophysiological data using Delay Differential Analysis (DDA). All data processing happens locally on your machine for maximum privacy. Besides being useful for physiological applications, DDALAB can serve as a general-purpose time-series visualization and annotation tool.
+DDALAB brings data import, Delay Differential Analysis (DDA), and interactive visualization into a desktop workspace for neurophysiological time series. I led its development, from the initial prototype to the Python/Qt interface and Rust-backed analysis workflows, incorporating feedback from researchers at the Salk Institute.
+
+Analysis runs locally by default. Researchers can explicitly submit jobs to the Neuroscience Gateway (NSG) when remote computation is needed.
 
 ## Features
 
-- **Multi-format support:** EDF, FIFF, ASCII/CSV, BrainVision, and EEGLAB files
-- **BIDS compatibility:** Native Brain Imaging Data Structure support
-- **OpenNeuro integration:** Direct dataset browsing and downloads
-- **Real-time analysis:** Interactive heatmaps and time-series visualization
-- **Analysis history:** Persistent storage via SQLite
+- Import EDF, FIFF, ASCII/CSV, BrainVision, and EEGLAB recordings, including BIDS-organized datasets.
+- Browse and download public datasets through OpenNeuro and NEMAR.
+- Inspect waveforms, select channels and time intervals, and visualize DDA results.
+- Retain analysis settings and results in a local SQLite history for reproducible workflows.
+- Use the desktop interface or Python command-line tools with the Rust `dda-rs` computation backend.
 
 ## Technology
 
-**Frontend:** Tauri v2, React 18, TypeScript, Next.js 14, and ECharts
-
-**Backend:** Rust, Axum, SQLite, and the custom `dda-rs` package for DDA
+The desktop application uses Python and PySide6, with Qt Quick/QML for the interface and visualization. Rust provides the DDA computation backend, and SQLite stores local analysis records.

@@ -1,5 +1,5 @@
 name: Simon Dräger
-intro: Research in machine learning, deep learning, and computational neuroscience.
+intro: I study how neural networks compute and develop methods for analyzing complex dynamical systems.
 photo: /assets/img/profile_pic.jpeg
 photo_alt: Portrait of Simon Dräger
 
@@ -11,17 +11,16 @@ email_parts:
 # Add an address to enable the Copy email button.
 email: ""
 github_url: https://github.com/sdraeger
-cv_url: ""
+cv_url: /assets/pdf/Simon_Draeger_CV.pdf
 scholar_url: https://scholar.google.com/citations?user=1BZNQv0AAAAJ&hl=en
 
-focus_intro: My research interests include machine learning, deep learning, and computational neuroscience.
 focus:
-  - title: Machine learning
-    description: Methods for learning from complex scientific and neurophysiological data.
-  - title: Deep learning
-    description: Neural-network approaches to representation learning and predictive modeling.
-  - title: Computational neuroscience
-    description: Computational methods for studying neural systems and behavior.
+  - title: Recurrent-network dynamics
+    description: Task-dependent symmetries and structured weight perturbations that reveal how recurrent networks maintain memory and generate sequences.
+  - title: Causal analysis of neural dynamics
+    description: Nonlinear time-series methods for distinguishing interactions from dynamical similarity in neurophysiological recordings.
+  - title: Robust multimodal perception
+    description: Diffusion-based 3D object detection, LiDAR–camera fusion, and accuracy–speed–memory trade-offs in perception models.
 
 about:
   - I am a researcher at the Computational Neurobiology Laboratory (CNL) at the Salk Institute, led by Prof. Terry Sejnowski.

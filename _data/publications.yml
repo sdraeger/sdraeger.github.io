@@ -1,25 +1,43 @@
-# Keep entries in descending chronological order; the homepage preserves this order.
+# Newest venue year first; use the first preprint year when no venue year is assigned.
+# Preprint years are shown separately, so they cannot be mistaken for journal years.
 - year: 2026
   title: Task-Restricted Symmetries in Recurrent Weight Space
   authors: S. Dräger
-  venue: "ICML 2026 Workshop on Weight-Space Symmetries: from Foundations to Practical Applications."
+  venue: "ICML 2026 Workshop on Weight-Space Symmetries: from Foundations to Practical Applications"
+  url: https://arxiv.org/abs/2606.18457
+  pdf_url: https://arxiv.org/pdf/2606.18457
 
 - year: 2026
   title: "3DifFusionDet: Diffusion Model for 3D Object Detection with Robust LiDAR-Camera Fusion"
   authors: X. Xiang, S. Dräger, and J. Zhang
-  venue: ICASSP 2026.
+  venue: ICASSP 2026
+  preprint_year: 2023
+  url: https://arxiv.org/abs/2311.03742
+  pdf_url: https://arxiv.org/pdf/2311.03742
 
 - year: 2025
   title: Causal Dynamic Resonance
-  authors: C. Lainscsek, P. Salami, S. Dräger, S. S. Cash, and T. J. Sejnowski
-  venue: "Accepted to the Proceedings of the National Academy of Sciences. arXiv:2508.16733."
+  authors: C. Lainscsek, P. Salami, S. Dräger, A. R. Bulsara, S. S. Cash, and T. J. Sejnowski
+  venue: Proceedings of the National Academy of Sciences (PNAS)
+  status: Accepted
+  preprint_year: 2025
+  url: https://arxiv.org/abs/2508.16733
+  pdf_url: https://arxiv.org/pdf/2508.16733
+  code_url: https://github.com/lclaudia/CDR
 
 - year: 2025
   title: "EffiPerception: A Plug-and-Play Efficiency Enhancement Framework for 2D and 3D Perception Models"
   authors: X. Xiang, S. Dräger, and J. Zhang
-  venue: PRICAI 2025, poster presentation.
+  venue: PRICAI 2025
+  preprint_year: 2024
+  url: https://doi.org/10.1007/978-981-95-7084-3_31
+  pdf_url: https://arxiv.org/pdf/2403.12317
+  pdf_label: Preprint PDF
 
 - year: 2022
   title: Evaluating the Impact of Loss Function Variation in Deep Learning for Classification
   authors: S. Dräger and J. Dunkelau
-  venue: "arXiv:2210.16003."
+  venue: arXiv:2210.16003
+  status: Preprint
+  url: https://arxiv.org/abs/2210.16003
+  pdf_url: https://arxiv.org/pdf/2210.16003

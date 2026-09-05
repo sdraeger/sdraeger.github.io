@@ -41,12 +41,20 @@
         </header>
 
         <hr class="divider">
+        {% if page.screenshot %}
+          <figure class="project-screenshot">
+            <a href="{{ page.screenshot | relative_url }}" aria-label="View full-size {{ page.title }} screenshot">
+              <img src="{{ page.screenshot | relative_url }}" alt="{{ page.screenshot_alt | escape }}" width="1220" height="768" loading="lazy">
+            </a>
+            {% if page.screenshot_caption %}<figcaption>{{ page.screenshot_caption }}</figcaption>{% endif %}
+          </figure>
+        {% endif %}
         <article class="prose">{{ content }}</article>
         <hr class="divider">
         {% include site-footer.html %}
       </div>
     </main>
-    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top>
+    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top hidden>
       {% include icon.html name="arrow-up" size=18 %}
     </button>
     <script src="{{ '/assets/js/portfolio.js' | relative_url }}"></script>
