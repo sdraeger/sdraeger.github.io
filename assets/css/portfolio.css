@@ -219,20 +219,20 @@ h3 {
   gap: 0 0.35rem;
   margin-top: 2px;
   color: var(--muted-foreground);
-  font-size: 12px;
+  font-size: 14px;
   font-style: normal;
-  line-height: 16px;
+  line-height: 20px;
 }
 
 .profile-email-domain {
   white-space: nowrap;
 }
 
-.intro-copy > p {
+.profile-intro {
   max-width: 36rem;
-  margin-top: 12px;
+  margin-top: 20px;
   color: var(--muted-foreground);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
 }
 
@@ -287,9 +287,14 @@ h3 {
 
 .action-group {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
+}
+
+.button-cv {
+  margin-left: auto;
 }
 
 .button {
@@ -387,7 +392,7 @@ h3 {
 .section-stack {
   display: flex;
   flex-direction: column;
-  scroll-margin-top: 168px;
+  scroll-margin-top: var(--header-offset, 161px);
 }
 
 .section-copy {
@@ -395,7 +400,7 @@ h3 {
   margin-top: 12px;
   margin-bottom: 8px;
   color: var(--muted-foreground);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
 }
 
@@ -413,8 +418,8 @@ h3 {
 
 .focus-item p {
   color: var(--muted-foreground);
-  font-size: 14px;
-  line-height: 22px;
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .publication-list {
@@ -462,27 +467,23 @@ h3 {
   gap: 4px;
 }
 
-.project-copy h3 a:hover {
+.project-copy h3 a:hover,
+.publication-copy h3 a:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .project-copy p {
   color: var(--muted-foreground);
-  font-size: 14px;
+  font-size: 16px;
   line-height: 24px;
 }
 
-.project-panel {
+.project-details {
   display: flex;
-  min-height: 58px;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  padding: 12px 16px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: color-mix(in oklch, var(--card) 40%, transparent);
+  gap: 8px 16px;
 }
 
 .project-meta {
@@ -493,6 +494,7 @@ h3 {
 }
 
 .project-links,
+.publication-links,
 .detail-actions,
 .tag-list,
 .footer-links {
@@ -506,7 +508,8 @@ h3 {
   justify-content: flex-end;
 }
 
-.project-links a {
+.project-links a,
+.publication-links a {
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -516,7 +519,8 @@ h3 {
   text-underline-offset: 2px;
 }
 
-.project-links a:hover {
+.project-links a:hover,
+.publication-links a:hover {
   color: color-mix(in oklch, var(--foreground) 70%, transparent);
 }
 
@@ -559,6 +563,10 @@ h3 {
   box-shadow: 0 8px 24px oklch(0.145 0 0 / 0.16);
   color: var(--background);
   cursor: pointer;
+}
+
+.floating-control[hidden] {
+  display: none;
 }
 
 .detail-nav {
@@ -618,7 +626,7 @@ h3 {
 
 .prose {
   color: var(--foreground);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 26px;
 }
 
@@ -653,6 +661,25 @@ h3 {
   border-radius: 12px;
 }
 
+.project-screenshot {
+  margin: 0 0 24px;
+}
+
+.project-screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.project-screenshot figcaption {
+  margin-top: 8px;
+  color: var(--muted-foreground);
+  font-size: 12px;
+  line-height: 18px;
+}
+
 .prose pre {
   overflow-x: auto;
   padding: 16px;
@@ -685,20 +712,21 @@ h3 {
   h1 {
     font-size: 1.95rem;
   }
-
-  .intro-copy > p {
-    font-size: 15.2px;
-  }
 }
 
 @media (max-width: 639px) {
   .site-header {
-    grid-template-columns: minmax(0, 1fr) 80px 32px;
+    grid-template-columns: minmax(0, 1fr) 64px 32px;
+    column-gap: 12px;
+  }
+
+  .header-controls {
+    gap: 6px;
   }
 
   .profile-portrait {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
     border-radius: 10px;
   }
 
@@ -712,7 +740,7 @@ h3 {
     gap: 2px;
   }
 
-  .project-panel,
+  .project-details,
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
@@ -725,6 +753,13 @@ h3 {
   .floating-control {
     right: 20px;
     bottom: 20px;
+  }
+}
+
+@media (max-width: 399px) {
+  .intro-copy h1 {
+    font-size: 24px;
+    line-height: 1.3;
   }
 }
 

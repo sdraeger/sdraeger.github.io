@@ -89,23 +89,31 @@
         </header>
 
         <hr class="divider">
-        <article class="prose"><p>DDALAB is a cross-platform desktop application for analyzing neurophysiological data using Delay Differential Analysis (DDA). All data processing happens locally on your machine for maximum privacy. Besides being useful for physiological applications, DDALAB can serve as a general-purpose time-series visualization and annotation tool.</p>
+        
+          <figure class="project-screenshot">
+            <a href="/assets/img/ddalab-workspace.png" aria-label="View full-size DDALAB screenshot">
+              <img src="/assets/img/ddalab-workspace.png" alt="DDALAB waveform workspace showing eight channels from the screenprint EDF recording and channel-selection controls." width="1220" height="768" loading="lazy">
+            </a>
+            <figcaption>The Qt desktop interface displaying the screenprint EDF example, with channel selection and a ten-second waveform view.</figcaption>
+          </figure>
+        
+        <article class="prose"><p>DDALAB brings data import, Delay Differential Analysis (DDA), and interactive visualization into a desktop workspace for neurophysiological time series. I led its development, from the initial prototype to the Python/Qt interface and Rust-backed analysis workflows, incorporating feedback from researchers at the Salk Institute.</p>
+
+<p>Analysis runs locally by default. Researchers can explicitly submit jobs to the Neuroscience Gateway (NSG) when remote computation is needed.</p>
 
 <h2 id="features">Features</h2>
 
 <ul>
-  <li><strong>Multi-format support:</strong> EDF, FIFF, ASCII/CSV, BrainVision, and EEGLAB files</li>
-  <li><strong>BIDS compatibility:</strong> Native Brain Imaging Data Structure support</li>
-  <li><strong>OpenNeuro integration:</strong> Direct dataset browsing and downloads</li>
-  <li><strong>Real-time analysis:</strong> Interactive heatmaps and time-series visualization</li>
-  <li><strong>Analysis history:</strong> Persistent storage via SQLite</li>
+  <li>Import EDF, FIFF, ASCII/CSV, BrainVision, and EEGLAB recordings, including BIDS-organized datasets.</li>
+  <li>Browse and download public datasets through OpenNeuro and NEMAR.</li>
+  <li>Inspect waveforms, select channels and time intervals, and visualize DDA results.</li>
+  <li>Retain analysis settings and results in a local SQLite history for reproducible workflows.</li>
+  <li>Use the desktop interface or Python command-line tools with the Rust <code class="language-plaintext highlighter-rouge">dda-rs</code> computation backend.</li>
 </ul>
 
 <h2 id="technology">Technology</h2>
 
-<p><strong>Frontend:</strong> Tauri v2, React 18, TypeScript, Next.js 14, and ECharts</p>
-
-<p><strong>Backend:</strong> Rust, Axum, SQLite, and the custom <code class="language-plaintext highlighter-rouge">dda-rs</code> package for DDA</p>
+<p>The desktop application uses Python and PySide6, with Qt Quick/QML for the interface and visualization. Rust provides the DDA computation backend, and SQLite stores local analysis records.</p>
 </article>
         <hr class="divider">
         
@@ -119,7 +127,7 @@
 
       </div>
     </main>
-    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top>
+    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top hidden>
       
 
 <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"></path></svg>
