@@ -4,5 +4,7 @@
   <div class="footer-links">
     {% if profile.email and profile.email != empty %}<a href="mailto:{{ profile.email }}">Email</a>{% endif %}
     <a href="{{ profile.github_url }}" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="#main-content">Back to top</a>
+    {% include theme-toggle.html %}
   </div>
 </footer>

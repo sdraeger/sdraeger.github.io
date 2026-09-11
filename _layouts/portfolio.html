@@ -8,7 +8,7 @@
     {% assign projects = site.projects | where: "featured", true | sort: "order" %}
     {% assign publications = site.data.publications %}
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <main class="site-main" id="main-content">
+    <main class="site-main" id="main-content" tabindex="-1">
       <div class="site-container">
         <header class="site-header">
           <div class="intro-copy">
@@ -22,8 +22,7 @@
             {% endif %}
           </div>
           <img class="profile-portrait" src="{{ profile.photo | relative_url }}" alt="{{ profile.photo_alt }}" width="400" height="400" fetchpriority="high">
-          <nav class="header-controls" aria-label="Site controls">
-            {% include theme-toggle.html %}
+          <nav class="header-controls" aria-label="Research profiles">
             <a class="icon-button" href="{{ profile.github_url }}" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub">
               {% include icon.html name="github" size=16 %}
             </a>
@@ -36,7 +35,7 @@
         </header>
         <p class="profile-intro">{{ profile.intro }}</p>
 
-        <div class="action-row">
+        <nav class="action-row" aria-label="Profile navigation">
           <div class="action-group">
             {% if profile.email and profile.email != empty %}
               <button class="button button-secondary" type="button" data-copy-email="{{ profile.email }}">
@@ -49,14 +48,14 @@
                 <span>Copy email</span>
               </button>
             {% endif %}
-            <a class="button button-secondary" href="#focus">Research Focus</a>
-            {% if publications.size > 0 %}<a class="button button-secondary" href="#publications">Publications</a>{% endif %}
-            {% if projects.size > 0 %}<a class="button button-secondary" href="#research">Research Software</a>{% endif %}
+            <a class="section-nav-link" href="#focus">Research Focus</a>
+            {% if publications.size > 0 %}<a class="section-nav-link" href="#publications">Publications</a>{% endif %}
+            {% if projects.size > 0 %}<a class="section-nav-link" href="#research">Research Software</a>{% endif %}
             {% if profile.cv_url and profile.cv_url != empty %}
-              <a class="button button-secondary button-cv" href="{{ profile.cv_url | relative_url }}" download>CV (PDF)</a>
+              <a class="button button-outline button-cv" href="{{ profile.cv_url | relative_url }}" download>CV (PDF)</a>
             {% endif %}
           </div>
-        </div>
+        </nav>
 
         <hr class="divider">
 
@@ -66,8 +65,6 @@
             <p class="section-copy about-copy">{{ paragraph }}</p>
           {% endfor %}
         </section>
-
-        <hr class="divider">
 
         <section class="section-stack" id="focus" aria-labelledby="focus-heading">
           <h2 id="focus-heading">Research Focus</h2>
@@ -82,7 +79,6 @@
         </section>
 
         {% if publications.size > 0 %}
-          <hr class="divider">
           <section class="section-stack" id="publications" aria-labelledby="publications-heading">
             <h2 id="publications-heading">Publications</h2>
             <div class="publication-list">
@@ -92,7 +88,7 @@
                   <div class="publication-copy">
                     <h3><a href="{{ publication.url | escape }}" target="_blank" rel="noreferrer">{{ publication.title }}</a></h3>
                     <p>{{ publication.authors }}.</p>
-                    <p>{% if publication.status %}{{ publication.status }} · {% endif %}{{ publication.venue }}{% if publication.preprint_year %} · Preprint {{ publication.preprint_year }}{% endif %}</p>
+                    <p>{{ publication.venue_short | default: publication.venue }}{% if publication.status %} · {{ publication.status }}{% endif %}{% if publication.preprint_year %} · Preprint {{ publication.preprint_year }}{% endif %}</p>
                     <div class="publication-links">
                       {% if publication.pdf_url %}<a href="{{ publication.pdf_url | escape }}" target="_blank" rel="noreferrer" aria-label="{{ publication.pdf_label | default: 'PDF' }}: {{ publication.title | escape }}">{{ publication.pdf_label | default: 'PDF' }}</a>{% endif %}
                       {% if publication.code_url %}<a href="{{ publication.code_url | escape }}" target="_blank" rel="noreferrer" aria-label="Code: {{ publication.title | escape }}">Code</a>{% endif %}
@@ -105,7 +101,6 @@
         {% endif %}
 
         {% if projects.size > 0 %}
-          <hr class="divider">
           <section class="section-stack" id="research" aria-labelledby="research-heading">
             <h2 id="research-heading">Research Software</h2>
             <div class="project-list">
@@ -119,9 +114,6 @@
         {% include site-footer.html %}
       </div>
     </main>
-    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top hidden>
-      {% include icon.html name="arrow-up" size=18 %}
-    </button>
     <script src="{{ '/assets/js/portfolio.js' | relative_url }}"></script>
   </body>
 </html>

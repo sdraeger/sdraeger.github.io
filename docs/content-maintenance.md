@@ -9,6 +9,9 @@ when available, otherwise the arXiv record. Add PDF and code links only after
 verifying them; label an earlier preprint PDF when its title differs from the
 published paper.
 
+Keep the full venue name in `venue`; an optional `venue_short` provides a compact
+display name on the homepage without changing the underlying metadata.
+
 Metadata was checked against the canonical academic CV and primary paper pages
 on 2026-09-04. Causal Dynamic Resonance has six authors in its revised arXiv record.
 
@@ -53,5 +56,6 @@ git diff --check
 ```
 
 Check light and dark themes at desktop, 390px and 320px CSS widths. Verify section
-buttons and incoming fragment URLs clear the sticky header, no horizontal overflow
-appears, and Back to top is hidden initially and appears after scrolling.
+links and incoming fragment URLs land on their headings and no horizontal overflow
+appears. Verify the footer's theme switch and Back to top link on both the homepage
+and project pages, including keyboard navigation and reduced-motion settings.

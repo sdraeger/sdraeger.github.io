@@ -158,9 +158,6 @@ pre {
 }
 
 .site-header {
-  position: sticky;
-  z-index: 40;
-  top: 0;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 112px 32px;
   align-items: flex-start;
@@ -208,9 +205,9 @@ h2 {
 }
 
 h3 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 24px;
 }
 
 .profile-email {
@@ -244,10 +241,9 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 0;
-  border: 1px solid var(--border);
+  border: 0;
   border-radius: 999px;
-  background: var(--background);
-  box-shadow: var(--shadow-xs);
+  background: transparent;
   color: var(--muted-foreground);
   cursor: pointer;
   transition: background-color 150ms ease-out, color 150ms ease-out;
@@ -290,7 +286,22 @@ h3 {
   width: 100%;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
+  gap: 12px 24px;
+}
+
+.section-nav-link {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-underline-offset: 3px;
+}
+
+.section-nav-link:hover,
+.section-nav-link:focus-visible {
+  text-decoration: underline;
 }
 
 .button-cv {
@@ -392,7 +403,11 @@ h3 {
 .section-stack {
   display: flex;
   flex-direction: column;
-  scroll-margin-top: var(--header-offset, 161px);
+  scroll-margin-top: 16px;
+}
+
+.section-stack + .section-stack {
+  margin-top: 48px;
 }
 
 .section-copy {
@@ -424,7 +439,7 @@ h3 {
 
 .publication-list {
   display: grid;
-  gap: 20px;
+  gap: 32px;
   margin-top: 16px;
 }
 
@@ -544,29 +559,6 @@ h3 {
   color: var(--foreground);
   text-decoration: underline;
   text-underline-offset: 2px;
-}
-
-.floating-control {
-  position: fixed;
-  z-index: 50;
-  right: 24px;
-  bottom: 24px;
-  display: flex;
-  width: 48px;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  border-radius: 999px;
-  background: var(--foreground);
-  box-shadow: 0 8px 24px oklch(0.145 0 0 / 0.16);
-  color: var(--background);
-  cursor: pointer;
-}
-
-.floating-control[hidden] {
-  display: none;
 }
 
 .detail-nav {
@@ -730,6 +722,17 @@ h3 {
     border-radius: 10px;
   }
 
+  .action-group {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 24px;
+    justify-items: start;
+  }
+
+  .button-cv {
+    margin-left: 0;
+  }
+
   .focus-item {
     grid-template-columns: 1fr;
     gap: 4px;
@@ -748,11 +751,6 @@ h3 {
 
   .project-links {
     justify-content: flex-start;
-  }
-
-  .floating-control {
-    right: 20px;
-    bottom: 20px;
   }
 }
 

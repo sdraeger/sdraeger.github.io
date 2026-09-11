@@ -16,11 +16,11 @@ scholar_url: https://scholar.google.com/citations?user=1BZNQv0AAAAJ&hl=en
 
 focus:
   - title: Recurrent-network dynamics
-    description: Task-dependent symmetries and structured weight perturbations that reveal how recurrent networks maintain memory and generate sequences.
+    description: Structured weight perturbations to study memory, sequence generation, and task-dependent symmetries in recurrent networks.
   - title: Causal analysis of neural dynamics
-    description: Nonlinear time-series methods for distinguishing interactions from dynamical similarity in neurophysiological recordings.
+    description: Nonlinear time-series methods to distinguish interactions from dynamical similarity in neural recordings.
   - title: Robust multimodal perception
-    description: Diffusion-based 3D object detection, LiDAR–camera fusion, and accuracy–speed–memory trade-offs in perception models.
+    description: Diffusion-based 3D detection and LiDAR–camera fusion, balancing accuracy, speed, and memory use.
 
 about:
   - I am a researcher at the Computational Neurobiology Laboratory (CNL) at the Salk Institute, led by Prof. Terry Sejnowski.

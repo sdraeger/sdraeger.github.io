@@ -4,6 +4,7 @@
   title: Task-Restricted Symmetries in Recurrent Weight Space
   authors: S. Dräger
   venue: "ICML 2026 Workshop on Weight-Space Symmetries: from Foundations to Practical Applications"
+  venue_short: ICML 2026 · Weight-Space Symmetries Workshop
   url: https://arxiv.org/abs/2606.18457
   pdf_url: https://arxiv.org/pdf/2606.18457
 
@@ -19,6 +20,7 @@
   title: Causal Dynamic Resonance
   authors: C. Lainscsek, P. Salami, S. Dräger, A. R. Bulsara, S. S. Cash, and T. J. Sejnowski
   venue: Proceedings of the National Academy of Sciences (PNAS)
+  venue_short: PNAS
   status: Accepted
   preprint_year: 2025
   url: https://arxiv.org/abs/2508.16733
