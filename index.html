@@ -36,7 +36,7 @@
     
     
     <a class="skip-link" href="#main-content">Skip to content</a>
-    <main class="site-main" id="main-content">
+    <main class="site-main" id="main-content" tabindex="-1">
       <div class="site-container">
         <header class="site-header">
           <div class="intro-copy">
@@ -50,20 +50,7 @@
             
           </div>
           <img class="profile-portrait" src="/assets/img/profile_pic.jpeg" alt="Portrait of Simon Dräger" width="400" height="400" fetchpriority="high">
-          <nav class="header-controls" aria-label="Site controls">
-            <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>
-  <span class="theme-icon theme-icon-moon">
-
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
-
-</span>
-  <span class="theme-icon theme-icon-sun">
-
-<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
-
-</span>
-</button>
-
+          <nav class="header-controls" aria-label="Research profiles">
             <a class="icon-button" href="https://github.com/sdraeger" target="_blank" rel="noreferrer" aria-label="GitHub profile" title="GitHub">
               
 
@@ -84,17 +71,17 @@
         </header>
         <p class="profile-intro">I study how neural networks compute and develop methods for analyzing complex dynamical systems.</p>
 
-        <div class="action-row">
+        <nav class="action-row" aria-label="Profile navigation">
           <div class="action-group">
             
-            <a class="button button-secondary" href="#focus">Research Focus</a>
-            <a class="button button-secondary" href="#publications">Publications</a>
-            <a class="button button-secondary" href="#research">Research Software</a>
+            <a class="section-nav-link" href="#focus">Research Focus</a>
+            <a class="section-nav-link" href="#publications">Publications</a>
+            <a class="section-nav-link" href="#research">Research Software</a>
             
-              <a class="button button-secondary button-cv" href="/assets/pdf/Simon_Draeger_CV.pdf" download>CV (PDF)</a>
+              <a class="button button-outline button-cv" href="/assets/pdf/Simon_Draeger_CV.pdf" download>CV (PDF)</a>
             
           </div>
-        </div>
+        </nav>
 
         <hr class="divider">
 
@@ -107,32 +94,29 @@
           
         </section>
 
-        <hr class="divider">
-
         <section class="section-stack" id="focus" aria-labelledby="focus-heading">
           <h2 id="focus-heading">Research Focus</h2>
           <div class="focus-list">
             
               <div class="focus-item">
                 <h3>Recurrent-network dynamics</h3>
-                <p>Task-dependent symmetries and structured weight perturbations that reveal how recurrent networks maintain memory and generate sequences.</p>
+                <p>Structured weight perturbations to study memory, sequence generation, and task-dependent symmetries in recurrent networks.</p>
               </div>
             
               <div class="focus-item">
                 <h3>Causal analysis of neural dynamics</h3>
-                <p>Nonlinear time-series methods for distinguishing interactions from dynamical similarity in neurophysiological recordings.</p>
+                <p>Nonlinear time-series methods to distinguish interactions from dynamical similarity in neural recordings.</p>
               </div>
             
               <div class="focus-item">
                 <h3>Robust multimodal perception</h3>
-                <p>Diffusion-based 3D object detection, LiDAR–camera fusion, and accuracy–speed–memory trade-offs in perception models.</p>
+                <p>Diffusion-based 3D detection and LiDAR–camera fusion, balancing accuracy, speed, and memory use.</p>
               </div>
             
           </div>
         </section>
 
         
-          <hr class="divider">
           <section class="section-stack" id="publications" aria-labelledby="publications-heading">
             <h2 id="publications-heading">Publications</h2>
             <div class="publication-list">
@@ -142,7 +126,7 @@
                   <div class="publication-copy">
                     <h3><a href="https://arxiv.org/abs/2606.18457" target="_blank" rel="noreferrer">Task-Restricted Symmetries in Recurrent Weight Space</a></h3>
                     <p>S. Dräger.</p>
-                    <p>ICML 2026 Workshop on Weight-Space Symmetries: from Foundations to Practical Applications</p>
+                    <p>ICML 2026 · Weight-Space Symmetries Workshop</p>
                     <div class="publication-links">
                       <a href="https://arxiv.org/pdf/2606.18457" target="_blank" rel="noreferrer" aria-label="PDF: Task-Restricted Symmetries in Recurrent Weight Space">PDF</a>
                       
@@ -168,7 +152,7 @@
                   <div class="publication-copy">
                     <h3><a href="https://arxiv.org/abs/2508.16733" target="_blank" rel="noreferrer">Causal Dynamic Resonance</a></h3>
                     <p>C. Lainscsek, P. Salami, S. Dräger, A. R. Bulsara, S. S. Cash, and T. J. Sejnowski.</p>
-                    <p>Accepted · Proceedings of the National Academy of Sciences (PNAS) · Preprint 2025</p>
+                    <p>PNAS · Accepted · Preprint 2025</p>
                     <div class="publication-links">
                       <a href="https://arxiv.org/pdf/2508.16733" target="_blank" rel="noreferrer" aria-label="PDF: Causal Dynamic Resonance">PDF</a>
                       <a href="https://github.com/lclaudia/CDR" target="_blank" rel="noreferrer" aria-label="Code: Causal Dynamic Resonance">Code</a>
@@ -194,7 +178,7 @@
                   <div class="publication-copy">
                     <h3><a href="https://arxiv.org/abs/2210.16003" target="_blank" rel="noreferrer">Evaluating the Impact of Loss Function Variation in Deep Learning for Classification</a></h3>
                     <p>S. Dräger and J. Dunkelau.</p>
-                    <p>Preprint · arXiv:2210.16003</p>
+                    <p>arXiv:2210.16003 · Preprint</p>
                     <div class="publication-links">
                       <a href="https://arxiv.org/pdf/2210.16003" target="_blank" rel="noreferrer" aria-label="PDF: Evaluating the Impact of Loss Function Variation in Deep Learning for Classification">PDF</a>
                       
@@ -207,7 +191,6 @@
         
 
         
-          <hr class="divider">
           <section class="section-stack" id="research" aria-labelledby="research-heading">
             <h2 id="research-heading">Research Software</h2>
             <div class="project-list">
@@ -249,18 +232,25 @@
   <div class="footer-links">
     
     <a href="https://github.com/sdraeger" target="_blank" rel="noreferrer">GitHub</a>
+    <a href="#main-content">Back to top</a>
+    <button class="icon-button theme-toggle" type="button" aria-label="Switch to dark mode" data-theme-toggle>
+  <span class="theme-icon theme-icon-moon">
+
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>
+
+</span>
+  <span class="theme-icon theme-icon-sun">
+
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+
+</span>
+</button>
+
   </div>
 </footer>
 
       </div>
     </main>
-    <button class="floating-control" type="button" aria-label="Back to top" data-scroll-top hidden>
-      
-
-<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"></path></svg>
-
-
-    </button>
     <script src="/assets/js/portfolio.js"></script>
   </body>
 </html>
