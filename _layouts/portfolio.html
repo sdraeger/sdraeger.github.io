@@ -41,7 +41,7 @@
             {% if publications.size > 0 %}<a class="section-nav-link" href="#publications">Publications</a>{% endif %}
             {% if projects.size > 0 %}<a class="section-nav-link" href="#research">Research Software</a>{% endif %}
             {% if profile.cv_url and profile.cv_url != empty %}
-              <a class="button button-outline button-cv" href="{{ profile.cv_url | relative_url }}" download>CV (PDF)</a>
+              <a class="button button-outline button-cv" href="{{ profile.cv_url | relative_url }}" target="_blank">CV (PDF)</a>
             {% endif %}
           </div>
         </nav>
