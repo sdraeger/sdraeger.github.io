@@ -8,19 +8,17 @@ email_parts:
   provider: gmail
   tld: com
 
-# Add an address to enable the Copy email button.
-email: ""
 github_url: https://github.com/sdraeger
 cv_url: /assets/pdf/Simon_Draeger_CV.pdf
 scholar_url: https://scholar.google.com/citations?user=1BZNQv0AAAAJ&hl=en
 
 focus:
-  - title: Recurrent-network dynamics
-    description: Structured weight perturbations to study memory, sequence generation, and task-dependent symmetries in recurrent networks.
-  - title: Causal analysis of neural dynamics
-    description: Nonlinear time-series methods to distinguish interactions from dynamical similarity in neural recordings.
-  - title: Robust multimodal perception
-    description: Diffusion-based 3D detection and LiDAR–camera fusion, balancing accuracy, speed, and memory use.
+  - title: Neural network dynamics
+    description: How do properties of neural networks, such as information encoded in their hidden state, change over time?
+  - title: Mechanistic interpretability
+    description: What computations do neural networks perform internally?
+  - title: Control theory
+    description: Using tools like Model Predictive Control (MPC) and closed-loop control, can we steer neural networks to certain outcomes?
 
 about:
   - I am a researcher at the Computational Neurobiology Laboratory (CNL) at the Salk Institute, led by Prof. Terry Sejnowski.

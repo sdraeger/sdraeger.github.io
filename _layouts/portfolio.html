@@ -37,17 +37,6 @@
 
         <nav class="action-row" aria-label="Profile navigation">
           <div class="action-group">
-            {% if profile.email and profile.email != empty %}
-              <button class="button button-secondary" type="button" data-copy-email="{{ profile.email }}">
-                <span class="copy-button-icon is-entering" data-copy-icon>
-                  <span data-copy-state="idle">{% include icon.html name="copy" size=14 %}</span>
-                  <span data-copy-state="success" hidden>{% include icon.html name="check" size=14 %}</span>
-                  <span data-copy-state="failure" hidden>{% include icon.html name="x" size=14 %}</span>
-                  <span class="sr-only" data-copy-status>Copy</span>
-                </span>
-                <span>Copy email</span>
-              </button>
-            {% endif %}
             <a class="section-nav-link" href="#focus">Research Focus</a>
             {% if publications.size > 0 %}<a class="section-nav-link" href="#publications">Publications</a>{% endif %}
             {% if projects.size > 0 %}<a class="section-nav-link" href="#research">Research Software</a>{% endif %}
@@ -72,7 +61,7 @@
             {% for item in profile.focus %}
               <div class="focus-item">
                 <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
+                {% if item.description %}<p>{{ item.description }}</p>{% endif %}
               </div>
             {% endfor %}
           </div>

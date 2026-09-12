@@ -22,46 +22,14 @@
     setTheme(root.dataset.theme === "dark" ? "light" : "dark");
   });
 
-  const copyButton = document.querySelector("[data-copy-email]");
-  let copyResetTimer;
-
-  function showCopyState(state) {
-    if (!copyButton) return;
-    const icon = copyButton.querySelector("[data-copy-icon]");
-    copyButton.querySelectorAll("[data-copy-state]").forEach((element) => {
-      element.hidden = element.dataset.copyState !== state;
-    });
-    const status = copyButton.querySelector("[data-copy-status]");
-    if (status) status.textContent = state === "success" ? "Copied" : state === "failure" ? "Failed to copy" : "Copy";
-    icon?.classList.remove("is-entering");
-    void icon?.offsetWidth;
-    icon?.classList.add("is-entering");
+  // The address is split across spans in the markup so it is not in the served HTML as plain text.
+  const address = document.querySelector(".profile-email");
+  if (address) {
+    const [local, , domain] = address.children;
+    const value = `${local.textContent}@${domain.textContent}`;
+    const link = document.createElement("a");
+    link.href = `mailto:${value}`;
+    link.textContent = value;
+    address.replaceChildren(link);
   }
-
-  async function writeClipboard(value) {
-    if (navigator.clipboard?.writeText) {
-      await navigator.clipboard.writeText(value);
-      return;
-    }
-    const field = document.createElement("textarea");
-    field.value = value;
-    field.style.position = "fixed";
-    field.style.opacity = "0";
-    document.body.append(field);
-    field.select();
-    const copied = document.execCommand("copy");
-    field.remove();
-    if (!copied) throw new Error("Clipboard copy failed");
-  }
-
-  copyButton?.addEventListener("click", async () => {
-    window.clearTimeout(copyResetTimer);
-    try {
-      await writeClipboard(copyButton.dataset.copyEmail);
-      showCopyState("success");
-    } catch (_) {
-      showCopyState("failure");
-    }
-    copyResetTimer = window.setTimeout(() => showCopyState("idle"), 500);
-  });
 })();
