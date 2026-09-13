@@ -25,20 +25,15 @@ defaults:
       layout: project
 
 exclude:
-  - bin
   - docs
   - Gemfile
   - Gemfile.lock
   - vendor
-  - _posts
-  - _news
-  - news.html
-  - CONTRIBUTING.md
-  - docker-compose.yml
-  - docker-local.yml
-  - Dockerfile
-  - _sass
-  - assets/css/main.scss
+  - DESIGN.md
+  - LICENSE
+  - PRODUCT.md
+  - README.md
+  - THIRD_PARTY_NOTICES.md
 
 plugins:
   - jekyll-sitemap
