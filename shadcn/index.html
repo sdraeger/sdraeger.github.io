@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" class="motion-safe:scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>%TITLE%</title>
+    <meta name="description" content="%DESCRIPTION%" />
+    <meta property="og:title" content="%TITLE%" />
+    <meta property="og:description" content="%DESCRIPTION%" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="%URL%/" />
+    <link rel="canonical" href="%URL%/" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <script>
+      // Applies the saved or system theme before first paint; ThemeProvider takes over once React mounts.
+      try {
+        const saved = localStorage.getItem("theme")
+        const dark = saved === "dark" || (saved !== "light" && matchMedia("(prefers-color-scheme: dark)").matches)
+        document.documentElement.classList.add(dark ? "dark" : "light")
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

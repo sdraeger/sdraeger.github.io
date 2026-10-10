@@ -4,7 +4,7 @@ Simon Dräger's static research website, built with Jekyll and a compact visual 
 
 ## Edit the site
 
-Personal copy and links live in [`_data/profile.yml`](_data/profile.yml). The homepage layout is [`_layouts/portfolio.html`](_layouts/portfolio.html), and the shared visual system is [`assets/css/portfolio.css`](assets/css/portfolio.css).
+Personal copy and links live in [`_data/profile.yml`](_data/profile.yml). The deployed homepage is the shadcn/ui app in [`shadcn/`](shadcn/), which reads the same data files; CI builds it after Jekyll and replaces Jekyll's `index.html`. Project detail pages still use [`_layouts/project.html`](_layouts/project.html) and [`assets/css/portfolio.css`](assets/css/portfolio.css).
 
 ## Add a research project
 
