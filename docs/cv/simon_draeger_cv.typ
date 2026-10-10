@@ -78,6 +78,10 @@
 
 = Selected Publications
 
+- *S. Dräger.* "Halting in Recurrent Sequence Models." Accepted to the _NeurIPS 2026 Workshop on Interpretability as a Science_.
+
+- *S. Dräger.* "Calibrating Latent Traveling Waves Controls Memory Retrieval in Recurrent Networks." Accepted to the _NeurIPS 2026 Workshop on Symmetry and Geometry in Neural Representations (NeurReps)_.
+
 - *S. Dräger.* #link("https://arxiv.org/abs/2606.18457")["Task-Restricted Symmetries in Recurrent Weight Space."] _ICML 2026 Workshop on Weight-Space Symmetries: from Foundations to Practical Applications._
 
 - C. Lainscsek, P. Salami, *S. Dräger*, A. R. Bulsara, S. S. Cash, and T. J. Sejnowski. #link("https://arxiv.org/abs/2508.16733")["Causal Dynamic Resonance."] Accepted to the _Proceedings of the National Academy of Sciences (PNAS)_. Preprint: arXiv:2508.16733, 2025.

@@ -1,6 +1,20 @@
 # Newest venue year first; use the first preprint year when no venue year is assigned.
 # Preprint years are shown separately, so they cannot be mistaken for journal years.
 - year: 2026
+  title: Halting in Recurrent Sequence Models
+  authors: S. Dräger
+  venue: NeurIPS 2026 Workshop on Interpretability as a Science
+  venue_short: NeurIPS 2026 · Interpretability as a Science Workshop
+  status: Accepted
+
+- year: 2026
+  title: Calibrating Latent Traveling Waves Controls Memory Retrieval in Recurrent Networks
+  authors: S. Dräger
+  venue: NeurIPS 2026 Workshop on Symmetry and Geometry in Neural Representations (NeurReps)
+  venue_short: NeurIPS 2026 · NeurReps Workshop
+  status: Accepted
+
+- year: 2026
   title: Task-Restricted Symmetries in Recurrent Weight Space
   authors: S. Dräger
   venue: "ICML 2026 Workshop on Weight-Space Symmetries: from Foundations to Practical Applications"

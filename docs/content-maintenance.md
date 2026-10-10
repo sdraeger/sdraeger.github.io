@@ -18,8 +18,9 @@ on 2026-09-04. Causal Dynamic Resonance has six authors in its revised arXiv rec
 ## Public CV
 
 `docs/cv/` contains a public derivative of the 2026-09-04 canonical Desktop
-academic CV. Its only content change is the obfuscated contact address and removal
-of the email hyperlink. Leave the canonical source unchanged when refreshing it.
+academic CV. Its content changes are the obfuscated contact address, removal
+of the email hyperlink, and the two NeurIPS 2026 workshop papers accepted after
+that date. Leave the canonical source unchanged when refreshing it.
 
 Build from the repository root with Typst (New Computer Modern and Font Awesome 6
 fonts must be installed):

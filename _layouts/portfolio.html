@@ -75,13 +75,13 @@
                 <article class="publication-entry">
                   <time datetime="{{ publication.year }}">{{ publication.year }}</time>
                   <div class="publication-copy">
-                    <h3><a href="{{ publication.url | escape }}" target="_blank" rel="noreferrer">{{ publication.title }}</a></h3>
+                    <h3>{% if publication.url %}<a href="{{ publication.url | escape }}" target="_blank" rel="noreferrer">{{ publication.title }}</a>{% else %}{{ publication.title }}{% endif %}</h3>
                     <p>{{ publication.authors }}.</p>
                     <p>{{ publication.venue_short | default: publication.venue }}{% if publication.status %} · {{ publication.status }}{% endif %}{% if publication.preprint_year %} · Preprint {{ publication.preprint_year }}{% endif %}</p>
-                    <div class="publication-links">
+                    {% if publication.pdf_url or publication.code_url %}<div class="publication-links">
                       {% if publication.pdf_url %}<a href="{{ publication.pdf_url | escape }}" target="_blank" rel="noreferrer" aria-label="{{ publication.pdf_label | default: 'PDF' }}: {{ publication.title | escape }}">{{ publication.pdf_label | default: 'PDF' }}</a>{% endif %}
                       {% if publication.code_url %}<a href="{{ publication.code_url | escape }}" target="_blank" rel="noreferrer" aria-label="Code: {{ publication.title | escape }}">Code</a>{% endif %}
-                    </div>
+                    </div>{% endif %}
                   </div>
                 </article>
               {% endfor %}
