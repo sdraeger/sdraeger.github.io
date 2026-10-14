@@ -6,13 +6,13 @@
 #let extended = false
 
 #let fa-symbol(font, code) = text(font: font, size: 8pt)[#code]
-#let fa-envelope() = fa-symbol("Font Awesome 6 Free Solid", "\u{f0e0}")
-#let fa-globe() = fa-symbol("Font Awesome 6 Free Solid", "\u{f0ac}")
+#let fa-envelope() = fa-symbol("Font Awesome 7 Free Solid", "\u{f0e0}")
+#let fa-globe() = fa-symbol("Font Awesome 7 Free Solid", "\u{f0ac}")
 #let fa-icon(name, fa-set: none) = {
   if name == "github" {
-    fa-symbol("Font Awesome 6 Brands", "\u{f09b}")
+    fa-symbol("Font Awesome 7 Brands", "\u{f09b}")
   } else if name == "linkedin" {
-    fa-symbol("Font Awesome 6 Brands", "\u{f08c}")
+    fa-symbol("Font Awesome 7 Brands", "\u{f08c}")
   }
 }
 
@@ -31,7 +31,7 @@
     "link": "https://github.com/sdraeger",
   ),
   (
-    "icon": fa-symbol("Font Awesome 6 Free Solid", "\u{f19d}"),
+    "icon": fa-symbol("Font Awesome 7 Free Solid", "\u{f19d}"),
     "display": "Google Scholar",
     "link": "https://scholar.google.com/citations?user=1BZNQv0AAAAJ&hl=en",
   ),
@@ -95,11 +95,24 @@
 = Research Experience
 
 #work_entry(
-  "Jr Scientific Programmer",
+  "Research Software Engineer",
+  Salk,
+  department: [Center for AI and Research Computing, #box[Talmo Pereira]],
+  start_date: "Oct 2026",
+  end_date: "Present",
+  tasks: (
+    "Set up the Center for AI and Research Computing (AIRC) at the Salk Institute.",
+    "Integrated AI methods, including large language models (LLMs), into scientists' research.",
+  ),
+  location: "La Jolla, CA, USA",
+)
+
+#work_entry(
+  "Scientific Programmer",
   Salk,
   department: [Computational Neurobiology Laboratory, #box[Terrence Sejnowski]],
   start_date: "Apr 2025",
-  end_date: "Present",
+  end_date: "Oct 2026",
   tasks: (
     "Developed Schur-coordinate ablations of recurrent neural networks to identify which weight changes preserved memory and sequence generation across tasks and trained models. Authored the resulting ICML 2026 WSS workshop paper.",
     "Coauthored Causal Dynamic Resonance, accepted to PNAS, on identifying false causal links through noise perturbations, with evaluations on coupled dynamical systems and intracranial EEG.",
@@ -121,6 +134,8 @@
   location: "La Jolla, CA, USA",
 )
 
+#pagebreak()
+
 #work_entry(
     "Graduate Student Researcher",
     UCD,
@@ -133,8 +148,6 @@
     ),
     location: "Davis, CA, USA",
 )
-
-#pagebreak()
 
 = Selected Research Software
 

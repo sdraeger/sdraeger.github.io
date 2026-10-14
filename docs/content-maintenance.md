@@ -22,7 +22,7 @@ academic CV. Its content changes are the obfuscated contact address, removal
 of the email hyperlink, and the two NeurIPS 2026 workshop papers accepted after
 that date. Leave the canonical source unchanged when refreshing it.
 
-Build from the repository root with Typst (New Computer Modern and Font Awesome 6
+Build from the repository root with Typst (New Computer Modern and Font Awesome 7
 fonts must be installed):
 
 ```sh
