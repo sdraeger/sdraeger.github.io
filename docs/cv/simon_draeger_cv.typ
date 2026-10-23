@@ -76,7 +76,17 @@
   location: "Düsseldorf, Germany",
 )
 
-= Selected Publications
+= Publications
+
+== Journal and Conference Papers
+
+- C. Lainscsek, P. Salami, *S. Dräger*, A. R. Bulsara, S. S. Cash, and T. J. Sejnowski. #link("https://arxiv.org/abs/2508.16733")["Causal Dynamic Resonance."] Accepted to the _Proceedings of the National Academy of Sciences (PNAS)_. Preprint: arXiv:2508.16733, 2025.
+
+- X. Xiang, *S. Dräger*, and J. Zhang. #link("https://arxiv.org/abs/2311.03742")["3DifFusionDet: Diffusion Model for 3D Object Detection with Robust LiDAR-Camera Fusion."] _ICASSP 2026._
+
+- X. Xiang, *S. Dräger*, and J. Zhang. #link("https://doi.org/10.1007/978-981-95-7084-3_31")["EffiPerception: A Plug-and-Play Efficiency Enhancement Framework for 2D and 3D Perception Models."] _PRICAI 2025._
+
+== Workshop Papers
 
 - *S. Dräger.* "Halting in Recurrent Sequence Models." Accepted to the _NeurIPS 2026 Workshop on Interpretability as a Science_.
 
@@ -84,11 +94,11 @@
 
 - *S. Dräger.* #link("https://arxiv.org/abs/2606.18457")["Task-Restricted Symmetries in Recurrent Weight Space."] _ICML 2026 Workshop on Weight-Space Symmetries: from Foundations to Practical Applications._
 
-- C. Lainscsek, P. Salami, *S. Dräger*, A. R. Bulsara, S. S. Cash, and T. J. Sejnowski. #link("https://arxiv.org/abs/2508.16733")["Causal Dynamic Resonance."] Accepted to the _Proceedings of the National Academy of Sciences (PNAS)_. Preprint: arXiv:2508.16733, 2025.
+== Submitted Abstracts
 
-- X. Xiang, *S. Dräger*, and J. Zhang. #link("https://arxiv.org/abs/2311.03742")["3DifFusionDet: Diffusion Model for 3D Object Detection with Robust LiDAR-Camera Fusion."] _ICASSP 2026._
+- *S. Dräger* and R. Gao. "Small input perturbations reveal the identity of task-trained recurrent neural networks." Submitted to _COSYNE 2027_.
 
-- X. Xiang, *S. Dräger*, and J. Zhang. #link("https://doi.org/10.1007/978-981-95-7084-3_31")["EffiPerception: A Plug-and-Play Efficiency Enhancement Framework for 2D and 3D Perception Models."] _PRICAI 2025._
+== Preprints
 
 - *S. Dräger* and J. Dunkelau. #link("https://arxiv.org/abs/2210.16003")["Evaluating the Impact of Loss Function Variation in Deep Learning for Classification."] Preprint: arXiv:2210.16003, 2022.
 
@@ -114,9 +124,9 @@
   start_date: "Apr 2025",
   end_date: "Oct 2026",
   tasks: (
-    "Developed Schur-coordinate ablations of recurrent neural networks to identify which weight changes preserved memory and sequence generation across tasks and trained models. Authored the resulting ICML 2026 WSS workshop paper.",
+    "Developed Schur-coordinate ablations of recurrent neural networks to identify which weight changes preserved memory and sequence generation; authored the resulting ICML 2026 WSS workshop paper.",
     "Coauthored Causal Dynamic Resonance, accepted to PNAS, on identifying false causal links through noise perturbations, with evaluations on coupled dynamical systems and intracranial EEG.",
-    "Led development of DDALAB, a Python/Qt/Rust application for nonlinear analysis of neurophysiological time series, integrating data import, analysis execution, interactive visualization, and reproducible analysis records.",
+    "Led development of DDALAB, an application for neurophysiological time-series analysis.",
   ),
   location: "La Jolla, CA, USA",
 )
@@ -128,13 +138,11 @@
   start_date: "Jun 2024",
   end_date: "Sep 2024",
   tasks: (
-    "Built and presented the initial DDALAB prototype, turning analysis scripts into an application for data selection, computation, and visualization; refined the workflows through feedback from researchers.",
+    "Built and presented the initial DDALAB prototype, turning analysis scripts into an application refined through feedback from researchers.",
     "Mentored students in computational neurobiology, scientific programming, and data analysis.",
   ),
   location: "La Jolla, CA, USA",
 )
-
-#pagebreak()
 
 #work_entry(
     "Graduate Student Researcher",
@@ -143,66 +151,28 @@
     start_date: "Apr 2023",
     end_date: "Apr 2024",
     tasks: (
-      "Developed training, evaluation, and ablation pipelines for diffusion-based 3D object detection and LiDAR-camera fusion in 3DifFusionDet (ICASSP 2026).",
-      "Collaborated on model development and reproducible experiments for EffiPerception (PRICAI 2025), a framework for improving accuracy, speed, and memory trade-offs in 2D and 3D perception.",
+      "Developed training, evaluation, and ablation pipelines for 3DifFusionDet (ICASSP 2026).",
+      "Collaborated on model development and experiments for EffiPerception (PRICAI 2025).",
     ),
     location: "Davis, CA, USA",
 )
 
-= Selected Research Software
+= Research Software
 
 #work_entry(
   [DDALAB],
   "Python, Qt, Rust",
   tasks: (
-    [Developed a desktop application and command-line interface for Delay Differential Analysis (DDA), with electrophysiology file support, BIDS integration, waveform and result visualization, and analysis history. Integrated remote computation through the Neuroscience Gateway. #fa-icon("github") #link("https://github.com/sdraeger/DDALAB")[GitHub]],
+    [Desktop application and command-line interface for Delay Differential Analysis (DDA) of electrophysiology recordings, with BIDS integration, analysis history, and remote computation through the Neuroscience Gateway. #fa-icon("github") #link("https://github.com/sdraeger/DDALAB")[GitHub]],
   ),
 )
 
 #work_entry(
-  "DelayDifferentialAnalysis.jl",
-  "Julia",
+  "DelayDifferentialAnalysis.jl and dda-py",
+  "Julia, Python",
   tasks: (
-    [Developed a Julia package that exposes DDA through typed results and reusable analysis workflows. Implemented native CPU and CUDA-backed regression, interfaces to the established DDA binary, and resumable model and delay selection. #fa-icon("github") #link("https://github.com/sdraeger/DelayDifferentialAnalysis.jl")[GitHub]],
+    [Packages exposing DDA to Julia and Python workflows: native CPU and CUDA-backed regression in Julia; NumPy arrays, MNE recordings, and BIDS datasets in Python. #fa-icon("github") #link("https://github.com/sdraeger/DelayDifferentialAnalysis.jl")[Julia] #fa-icon("github") #link("https://github.com/sdraeger/dda-py")[Python]],
   ),
-)
-
-#work_entry(
-  "dda-py",
-  "Python",
-  tasks: (
-    [Developed a Python package for DDA on NumPy arrays and MNE recordings, with batch processing, BIDS workflows, pandas export, and plotting. Integrated native computation backends with Python result types and statistical comparisons. #fa-icon("github") #link("https://github.com/sdraeger/dda-py")[GitHub]],
-  ),
-)
-
-= Teaching and Service
-
-#work_entry(
-  "Workshop Reviewer",
-  "NeurIPS 2026",
-  start_date: "2026",
-  tasks: (
-    "Interpretability as a Science; Interpretability for Discovery; Symmetry and Geometry in Neural Representations (NeurReps).",
-  ),
-)
-
-#work_entry(
-  "Workshop Organizer",
-  "Delay Differential Analysis (DDA)",
-  start_date: "Aug 2025",
-  tasks: (
-    [Organized a virtual workshop for 25 participants on DDA methods and software, and supported researchers learning DDALAB workflows. #link("https://snl.salk.edu/~claudia/DDALAB/workshop.html")[Workshop page]],
-  ),
-)
-
-#work_entry(
-  "Teaching Assistant",
-  HHU,
-  start_date: "Summer 2022",
-  tasks: (
-    "Developed course materials, exams, and problem sets for undergraduate Statistical Data Analysis; supported students through weekly office hours.",
-  ),
-  location: "Düsseldorf, Germany",
 )
 
 = Presentations
@@ -217,8 +187,41 @@
   location: "Davis, CA, USA",
 )
 
+= Service and Teaching
+
+#work_entry(
+  "Workshop Reviewer",
+  "NeurIPS 2026",
+  start_date: "2026",
+  tasks: (
+    "Interpretability as a Science",
+    "Interpretability for Discovery",
+    "Symmetry and Geometry in Neural Representations (NeurReps)",
+    "Diffusion Language Models: Foundations, Efficiency, and Reasoning (DiffuLM)",
+  ),
+)
+
+#work_entry(
+  "Workshop Organizer",
+  "Delay Differential Analysis (DDA)",
+  start_date: "Aug 2025",
+  tasks: (
+    [Organized a virtual workshop for 25 participants on DDA methods and software. #link("https://snl.salk.edu/~claudia/DDALAB/workshop.html")[Workshop page]],
+  ),
+)
+
+#work_entry(
+  "Teaching Assistant",
+  HHU,
+  start_date: "Summer 2022",
+  tasks: (
+    "Developed course materials, exams, and problem sets for undergraduate Statistical Data Analysis.",
+  ),
+  location: "Düsseldorf, Germany",
+)
+
 = Technical Skills
 
-*Programming:* Python, Julia, Rust, C, TypeScript, JavaScript. \
-*Scientific computing:* PyTorch, TensorFlow, scikit-learn, Hugging Face, NumPy, MNE; recurrent-network analysis, controlled ablations, nonlinear time-series analysis. \
-*Research software:* Qt, FastAPI, Next.js, Docker, Git, SQLite, PostgreSQL, REST APIs, MinIO/S3-compatible storage.
+*Programming and tools:* Python, Julia, Rust, C, TypeScript; Qt, Docker, Git, SQLite, PostgreSQL. \
+*Scientific computing:* PyTorch, TensorFlow, scikit-learn, Hugging Face, NumPy, MNE. \
+*Methods:* recurrent-network analysis, controlled ablations, nonlinear time-series analysis.
