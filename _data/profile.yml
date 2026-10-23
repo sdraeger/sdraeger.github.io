@@ -1,5 +1,6 @@
 name: Simon Dräger
 intro: I study how neural networks compute and develop methods for analyzing complex dynamical systems.
+role: Research Software Engineer, Center for AI and Research Computing, Salk Institute
 photo: /assets/img/profile_pic.jpeg
 photo_alt: Portrait of Simon Dräger
 
@@ -21,5 +22,8 @@ focus:
     description: Using tools like Model Predictive Control (MPC) and closed-loop control, can we steer neural networks to certain outcomes?
 
 about:
-  - I am a researcher at the Computational Neurobiology Laboratory (CNL) at the Salk Institute, led by Prof. Terry Sejnowski.
-  - I obtained my undergraduate degree in Computer Science from University of Düsseldorf in 2022 and an M.S. in Computer Science from UC Davis in 2025.
+  - I am a Research Software Engineer at the Center for AI and Research Computing (AIRC) at the Salk Institute, which I helped set up and where I bring AI methods such as large language models into scientists' research. Previously, I was a scientific programmer in Terry Sejnowski's Computational Neurobiology Laboratory (CNL).
+  - My research focuses on the control-theoretic view of neural networks and the mechanisms they implement after learning one or more tasks. This has led me to topics such as the *identifiability* of an underlying computation and of world models, including when neural networks learn them.
+
+# Shown separately from the about paragraphs (in the margin on the handout page).
+education: I obtained my undergraduate degree in Computer Science from University of Düsseldorf in 2022 and an M.S. in Computer Science from UC Davis in 2025.

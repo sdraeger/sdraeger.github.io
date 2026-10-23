@@ -2,6 +2,7 @@ declare module "virtual:site" {
   export const profile: {
     name: string
     intro: string
+    role: string
     photo: string
     photo_alt: string
     email_parts: { local: string; provider: string; tld: string }
@@ -10,6 +11,7 @@ declare module "virtual:site" {
     scholar_url: string
     focus: { title: string; description?: string }[]
     about: string[]
+    education: string
   }
 
   export const publications: {

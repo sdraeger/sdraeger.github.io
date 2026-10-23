@@ -27,14 +27,14 @@ jobs:
         run: bundle exec jekyll build
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
-      - name: Build shadcn homepage
-        working-directory: shadcn
+      - name: Build homepage
+        working-directory: homepage
         run: |
           bun install --frozen-lockfile
           bun run build
-      # Only the homepage comes from shadcn/; project pages, the CV, 404 and sitemap stay Jekyll's.
+      # Only the homepage comes from homepage/; project pages, the CV, 404 and sitemap stay Jekyll's.
       - name: Replace Jekyll homepage
-        run: cp -R shadcn/dist/. _site/
+        run: cp -R homepage/dist/. _site/
       - name: Deploy
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4

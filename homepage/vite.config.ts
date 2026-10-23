@@ -1,6 +1,5 @@
 import { readdirSync, readFileSync } from "node:fs"
 import { basename, resolve } from "node:path"
-import tailwindcss from "@tailwindcss/vite"
 import react from "@vitejs/plugin-react"
 import { defineConfig, type Plugin } from "vite"
 import { viteSingleFile } from "vite-plugin-singlefile"
@@ -19,9 +18,11 @@ function siteData(): Plugin {
     resolveId: (source) => (source === id ? `\0${id}` : undefined),
     load(source) {
       if (source !== `\0${id}`) return
+      for (const file of ["_data/profile.yml", "_data/publications.yml"]) this.addWatchFile(resolve(site, file))
       const profile = read("_data/profile.yml")
       const projects = readdirSync(resolve(site, "_projects"))
         .filter((file) => file.endsWith(".md"))
+        .map((file) => (this.addWatchFile(resolve(site, "_projects", file)), file))
         .map((file) => ({
           ...parse(readFileSync(resolve(site, "_projects", file), "utf8").split(/^---$/m)[1]),
           url: config.url + config.collections.projects.permalink.replace(":name", basename(file, ".md")),
@@ -47,7 +48,9 @@ export default defineConfig({
   base: "./",
   // Copies the CV next to index.html: viteSingleFile would inline it as a data: URL, which browsers refuse to open.
   publicDir: resolve(site, "assets/pdf"),
-  plugins: [react(), tailwindcss(), viteSingleFile(), siteData()],
+  plugins: [react(), viteSingleFile(), siteData()],
+  // The dev server reads the portrait and CV from the Jekyll site one level up.
+  server: { fs: { allow: [site] } },
   resolve: {
     alias: {
       "@": resolve(import.meta.dirname, "./src"),
